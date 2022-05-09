@@ -1,0 +1,3 @@
+# Arquivo responsável por ignorar determinados arquivos no momento de commit para o github.
+__pycache__
+logs.log

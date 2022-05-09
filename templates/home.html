@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./static/css/styles.css">
+    <link rel="stylesheet" href="./static/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <title>Heart Attack Prediction</title>
+</head>
+
+<body class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="row container-title-logo">
+                <div class="col-sm-6">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="heart-img">
+                                <img src="./static/images/heart.png" alt="heart">
+                            </div>
+                            <h1>Heart Attack Prediction</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row row-container">
+                <div class="col-sm-6 col-container">
+                    <div class="row">
+                        <div class="col-sm-12 title">
+                            <h2>Pacient Information:</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <form action="main/api/run_model" id="runModel" method="POST">
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <label for="age">Age</label><br>
+                                        <input type="number" name="age" id="age" required="required" min="0" max="119"
+                                            value="50">
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <label for="sex">Sex</label><br>
+                                        <select name="sex" id="sex">
+                                            <option value="1">Male</option>
+                                            <option value="0">Female</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <label for="cp">Chest Pain Type</label><br>
+                                        <select name="cp" id="cp">
+                                            <option value="0">TA</option>
+                                            <option value="1">ATA</option>
+                                            <option value="2">NAP</option>
+                                            <option value="3">ASY</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <label for="trestbps">Resting Blood Pressure</label><br>
+                                        <input type="number" name="trestbps" id="trestbps" required="required" min="0"
+                                            max="300" value="120">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <label for="chol">Cholesterol</label><br>
+                                        <input type="number" name="chol" id="chol" required="required" min="0" max="700"
+                                            value="200">
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <label for="fbs">Fasting Blood Sugar</label><br>
+                                        <input type="number" name="fbs" id="fbs" required="required" min="0" max="1"
+                                            value="1">
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <label for="restecg">Resting ECG</label><br>
+                                        <select name="restecg" id="restecg">
+                                            <option value="0">Normal</option>
+                                            <option value="1">ST</option>
+                                            <option value="2">LVH</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <label for="thalach">Max Heart Rate</label><br>
+                                        <input type="number" name="thalach" id="thalach" required="required" min="60"
+                                            max="202" value="120">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <label for="exang">Exercise Angina</label><br>
+                                        <select name="exang" id="exang">
+                                            <option value="0">No</option>
+                                            <option value="1">Yes</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <label for="oldpeak">Oldpeak</label><br>
+                                        <input type="number" name="oldpeak" id="oldpeak" required="required" min="-3"
+                                            max="7" value="0.90" step="any">
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <label for="slope">ST Slope</label><br>
+                                        <select name="slope" id="slope">
+                                            <option value="0">Up</option>
+                                            <option value="1">Flat</option>
+                                            <option value="2">Down</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <label for="ca">CA</label><br>
+                                        <input type="number" name="ca" id="ca" required="required" min="0" max="2"
+                                            value="1">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <label for="thal">Thalassemia</label><br>
+                                        <select name="thal" id="thal">
+                                            <option value="0">Normal</option>
+                                            <option value="1">Fixed Defect</option>
+                                            <option value="2">Reversable Defect</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-3">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <button type="submit">Run Model</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="row row-container">
+                <div class="col-sm-6 col-container">
+                    <div class="row">
+                        <div class="col-sm-12 title">
+                            <h2>Results:</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12" id="hfResult">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./static/js/jquery.js"></script>
+<script src="./static/js/bootstrap.min.js"></script>
+<script src="./static/js/home.js"></script>
+
+</html>

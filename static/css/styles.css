@@ -1,0 +1,81 @@
+body.container-fluid {
+    background-color: #66BB6A;
+    font-family: 'Roboto';
+}
+
+.heart-img {
+    width: 12%;
+    height: 12%;
+    margin-right: 30px;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+.container-title-logo,
+.container-title-logo .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-title-logo .col-sm-12 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.container-title-logo h1 {
+    color: white;
+    font-weight: bold;
+}
+
+.title h2, #hfResult p {
+    color: #7B7B7B;
+    font-weight: bold;
+}
+
+div.row-container {
+    display: flex;
+    justify-content: center;
+}
+
+div.col-container {
+    background-color: #E0E0E0;
+    padding: 1.3em;
+    border-radius: 5px;
+}
+
+.col-container .row {
+    margin-bottom: 10px;
+}
+
+input, select {
+    width: 100%;
+    height: 40px;
+}
+
+.col-container .row .col-sm-3 label {
+    margin-bottom: -5px;
+    color: #7B7B7B;
+    font-size: 1.1em;
+    font-weight: 400;
+}
+
+.col-container .row .col-sm-3 input, select {
+    border: 0;
+    border-radius: 5px;
+}
+
+.col-container .row .col-sm-6 button {
+    background-color: #66BB6A;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    font-weight: bolder;
+    font-size: 1.5em;
+    width: 100%;
+    height: 100%;
+}
